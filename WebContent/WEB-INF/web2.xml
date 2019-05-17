@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>WebProject</display-name>
-<!--   <servlet>
-    <servlet-name>springMVC</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:springMvc-servlet.xml</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>springMVC</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping> -->
   <filter>
     <filter-name>AFilter</filter-name>
     <filter-class>com.example.apackage.AFilter</filter-class>
@@ -33,4 +20,12 @@
   <listener>
     <listener-class>com.example.apackage.MyOwnListener</listener-class>
   </listener>
+  <servlet>
+    <servlet-name>BServlet</servlet-name>
+    <servlet-class>com.example.apackage.BServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BServlet</servlet-name>
+    <url-pattern>/BServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
