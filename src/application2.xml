@@ -16,20 +16,14 @@
           http://www.springframework.org/schema/aop/spring-aop.xsd">
 
       <context:component-scan base-package="com.example.day0520"/>
-      <bean id="user" class="com.example.day0520.bean.User">
-        <property name="name">
-          <value>sunYu</value>
-        </property>
-        <property name="age">
-          <value>20</value>
-        </property>
-        <property name="address">
-          <array>
-            <value>100</value>
-            <value>200</value>
-            <value>500</value>
-          </array>
-        </property>
-        
-      </bean>
+<!--       <bean id="aspectDemo" class="com.example.day0520.xml.AspectDemo"></bean>
+      <aop:config>
+        <aop:pointcut expression="execution(* com.example.day0520.xml.TestAspect.*(..))" id="aspect1" />
+        <aop:aspect ref="aspectDemo">
+          <aop:before pointcut-ref="aspect1" method="start"/>
+          <aop:after-returning pointcut-ref="aspect1" method="end" />
+          <aop:around pointcut-ref="aspect1" method="around" />
+        </aop:aspect>
+      </aop:config> -->
+      <aop:aspectj-autoproxy />
   </beans>
