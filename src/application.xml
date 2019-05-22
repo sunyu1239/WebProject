@@ -16,6 +16,22 @@
           http://www.springframework.org/schema/aop/spring-aop.xsd">
 
       <context:component-scan base-package="com.example.day0520"/>
+      <bean id="fruit1" class="com.example.day0520.bean.Fruit">
+        <property name="id">
+          <value>1</value>
+        </property>
+        <property name="name">
+          <value>apple</value>
+        </property>
+      </bean>
+      <bean id="fruit2" class="com.example.day0520.bean.Fruit">
+        <property name="id">
+          <value>2</value>
+        </property>
+        <property name="name">
+          <value>orange</value>
+        </property>
+      </bean>
       <bean id="user" class="com.example.day0520.bean.User">
         <property name="name">
           <value>sunYu</value>
@@ -25,11 +41,56 @@
         </property>
         <property name="address">
           <array>
-            <value>100</value>
-            <value>200</value>
-            <value>500</value>
+            <value>南京</value>
+            <value>北极</value>
+            <value>南京nan</value>
           </array>
         </property>
-        
+        <property name="lessonList">
+          <list>
+            <bean class="com.example.day0520.bean.Lesson">
+              <property name="id">
+                <value>1</value>
+              </property>
+              <property name="name">
+                <value>数学</value>
+              </property>
+            </bean>
+            <bean class="com.example.day0520.bean.Lesson">
+              <property name="id">
+                <value>2</value>
+              </property>
+              <property name="name">
+                <value>英语</value>
+              </property>
+            </bean>
+          </list>
+        </property>
+        <property name="personSet">
+          <set>
+            <bean class="com.example.day0520.bean.Person">
+              <property name="name">
+                <value>小明</value>
+              </property>
+              <property name="age">
+                <value>27</value>
+              </property>
+            </bean>
+            <bean class="com.example.day0520.bean.Person">
+              <property name="name">
+                <value>小宏</value>
+              </property>
+              <property name="age">
+                <value>26</value>
+              </property>
+            </bean>
+          </set>
+        </property>
+        <property name="map">
+          <map>
+            <entry key="f1" value-ref="fruit1"></entry>
+            <entry key="f2" value-ref="fruit2"></entry>
+          </map>
+        </property>
       </bean>
   </beans>
